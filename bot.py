@@ -16,13 +16,13 @@ logger = logging.getLogger(__name__)
 
 
 def gen(update, context):
-    r = requests.get('https://accgen.cathook.club/api/v1/account/FC2C8TW-3KM4DE9-JY15SVX-KRP5PTQ')
+    r = requests.get('/* INSERT YOUR API URL HERE */')
     update.message.reply_text(r.json())
 
 
 def help(update, context):
     """Send a message when the command /help is issued."""
-    update.message.reply_text('/gen - generates a new steam account')
+    update.message.reply_text('/gen - generate an API response')
 
 def error(update, context):
     """Log Errors caused by Updates."""
@@ -34,7 +34,7 @@ def main():
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
-    updater = Updater("862997460:AAES_yIgOKuTLJY42C0_Jg4yxbGUq-TPCLs", use_context=True)
+    updater = Updater("/* BOT TOKEN */", use_context=True)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
